@@ -3,7 +3,7 @@
     <title>Python Data</title>
     <link href="https://aakashkh.github.io/python_data/feed.xml" rel="self" />
     <link href="https://aakashkh.github.io/python_data" />
-    <updated>2025-05-16T15:06:42+05:30</updated>
+    <updated>2025-05-16T15:10:09+05:30</updated>
     <author>
         <name>Aakash Khandelwal</name>
     </author>
@@ -25,17 +25,17 @@
             </summary>
         <content type="html">
             <![CDATA[
-                <p>Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python:</p><ol>
+                <p>Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python:</p><ul>
 <li><strong>Using list indexing with a list comprehension</strong>:</li>
-</ol>
+</ul>
 <pre><code class="language-python">my_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;]
 indices = [1, 4, 7]
 selected_items = [my_list[i] for i in indices]
 print(selected_items)  # Output: [&#39;b&#39;, &#39;e&#39;, &#39;h&#39;]
 </code></pre>
-<ol start="2">
+<ul>
 <li><strong>Using a simple loop</strong>:</li>
-</ol>
+</ul>
 <pre><code class="language-python">my_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;]
 indices = [1, 4, 7]
 selected_items = []
@@ -43,18 +43,18 @@ for i in indices:
     selected_items.append(my_list[i])
 print(selected_items)  # Output: [&#39;b&#39;, &#39;e&#39;, &#39;h&#39;]
 </code></pre>
-<ol start="3">
+<ul>
 <li><strong>Using NumPy (if you’re working with numerical data)</strong>:</li>
-</ol>
+</ul>
 <pre><code class="language-python">import numpy as np
 my_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;]
 indices = [1, 4, 7]
 selected_items = np.array(my_list)[indices].tolist()
 print(selected_items)  # Output: [&#39;b&#39;, &#39;e&#39;, &#39;h&#39;]
 </code></pre>
-<ol start="4">
+<ul>
 <li><strong>Using operator.itemgetter</strong>:</li>
-</ol>
+</ul>
 <pre><code class="language-python">from operator import itemgetter
 my_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;]
 indices = [1, 4, 7]
