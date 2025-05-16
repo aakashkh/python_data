@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://aakashkh.github.io/python_data/sitemap.xml

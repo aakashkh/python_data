@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Python Data",
+    "description": "",
+    "home_page_url": "https://aakashkh.github.io/python_data",
+    "feed_url": "https://aakashkh.github.io/python_data/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Aakash Khandelwal"
+    },
+    "items": [
+    ]
+}
