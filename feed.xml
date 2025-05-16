@@ -3,12 +3,32 @@
     <title>Python Data</title>
     <link href="https://aakashkh.github.io/python_data/feed.xml" rel="self" />
     <link href="https://aakashkh.github.io/python_data" />
-    <updated>2025-05-16T13:31:10+05:30</updated>
+    <updated>2025-05-16T15:01:09+05:30</updated>
     <author>
         <name>Aakash Khandelwal</name>
     </author>
     <id>https://aakashkh.github.io/python_data</id>
 
+    <entry>
+        <title>Accessing non-continous Indices in List</title>
+        <author>
+            <name>Aakash Khandelwal</name>
+        </author>
+        <link href="https://aakashkh.github.io/python_data/non-continous-indices-in-list.html"/>
+        <id>https://aakashkh.github.io/python_data/non-continous-indices-in-list.html</id>
+
+        <updated>2025-05-16T15:00:34+05:30</updated>
+            <summary>
+                <![CDATA[
+                    Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python: 1. **Using list indexing with a list&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p>Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python:<br><br>1. **Using list indexing with a list comprehension**:<br>```python<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = [my_list[i] for i in indices]<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>2. **Using a simple loop**:<br>```python<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = []<br>for i in indices:<br>    selected_items.append(my_list[i])<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>3. **Using NumPy (if you're working with numerical data)**:<br>```python<br>import numpy as np<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = np.array(my_list)[indices].tolist()<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>4. **Using operator.itemgetter**:<br>```python<br>from operator import itemgetter<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = list(itemgetter(*indices)(my_list))<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>The list comprehension method (first option) is the most straightforward and commonly used. It’s concise and readable. Choose the NumPy method if you’re working with large datasets or numerical arrays, and consider `itemgetter` for a functional programming style. Ensure the indices are valid to avoid `IndexError`.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Series vs DataFrame in Pandas</title>
         <author>

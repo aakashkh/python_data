@@ -10,6 +10,20 @@
     },
     "items": [
         {
+            "id": "https://aakashkh.github.io/python_data/non-continous-indices-in-list.html",
+            "url": "https://aakashkh.github.io/python_data/non-continous-indices-in-list.html",
+            "title": "Accessing non-continous Indices in List",
+            "summary": "Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python: 1. **Using list indexing with a list&hellip;",
+            "content_html": "<p>Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python:<br><br>1. **Using list indexing with a list comprehension**:<br>```python<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = [my_list[i] for i in indices]<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>2. **Using a simple loop**:<br>```python<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = []<br>for i in indices:<br>    selected_items.append(my_list[i])<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>3. **Using NumPy (if you're working with numerical data)**:<br>```python<br>import numpy as np<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = np.array(my_list)[indices].tolist()<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>4. **Using operator.itemgetter**:<br>```python<br>from operator import itemgetter<br>my_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h']<br>indices = [1, 4, 7]<br>selected_items = list(itemgetter(*indices)(my_list))<br>print(selected_items)  # Output: ['b', 'e', 'h']<br>```<br><br>The list comprehension method (first option) is the most straightforward and commonly used. It’s concise and readable. Choose the NumPy method if you’re working with large datasets or numerical arrays, and consider `itemgetter` for a functional programming style. Ensure the indices are valid to avoid `IndexError`.</p>",
+            "author": {
+                "name": "Aakash Khandelwal"
+            },
+            "tags": [
+            ],
+            "date_published": "2025-05-16T15:00:34+05:30",
+            "date_modified": "2025-05-16T15:01:09+05:30"
+        },
+        {
             "id": "https://aakashkh.github.io/python_data/series-vs-dataframe-in-pandas.html",
             "url": "https://aakashkh.github.io/python_data/series-vs-dataframe-in-pandas.html",
             "title": "Series vs DataFrame in Pandas",
