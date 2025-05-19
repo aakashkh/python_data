@@ -10,6 +10,23 @@
     },
     "items": [
         {
+            "id": "https://aakashkh.github.io/python_data/python-methods-functions-difference.html",
+            "url": "https://aakashkh.github.io/python_data/python-methods-functions-difference.html",
+            "title": "Demystifying Functions and Methods in Python (with Pandas Context)",
+            "summary": "Let’s clear up the difference between methods and functions, especially as they&hellip;",
+            "content_html": "<p> Let’s clear up the difference between methods and functions, especially as they relate to the wonderful world of Pandas.</p><p>Think of it this way:</p><ul>\n<li><strong>Functions</strong> are like standalone tools in your workshop. You can pick them up and use them on various things. They exist independently.</li>\n<li><strong>Methods</strong> are tools that are specifically attached to an object. You need to have the object in hand to use its methods. They operate <em>on</em> that specific object.</li>\n</ul>\n<p>In Python, and consequently in Pandas:</p><ul>\n<li>A <strong>function</strong> is a block of organized, reusable code that performs a specific task. You call a function by its name, and you might pass arguments (data) to it.</li>\n<li>A <strong>method</strong> is a function that is associated with an object (like a Pandas DataFrame or Series). You call a method on an object using dot notation (<code>object.method()</code>). The object itself is often implicitly passed as the first argument to the method.</li>\n</ul>\n<p>Let’s illustrate this with Pandas examples:</p><pre><code class=\"language-python\">import pandas as pd\n\n# Creating a sample Pandas Series\ndata = [10, 20, 30, 40, 50]\nmy_series = pd.Series(data)\n\n# --- Example of a FUNCTION ---\n# The &#39;len()&#39; function is a built-in Python function.\n# It&#39;s not specific to Pandas, but we can use it with a Pandas Series.\nlength_of_series = len(my_series)\nprint(f&quot;Using the len() function: {length_of_series}&quot;)\n\n# --- Example of a METHOD ---\n# The &#39;.mean()&#39; method is specific to Pandas Series objects.\n# We call it *on* the &#39;my_series&#39; object.\nmean_value = my_series.mean()\nprint(f&quot;Using the .mean() method: {mean_value}&quot;)\n\n# Another example with a DataFrame\ndata = {&#39;col1&#39;: [1, 2, 3], &#39;col2&#39;: [4, 5, 6]}\nmy_dataframe = pd.DataFrame(data)\n\n# Using the &#39;len()&#39; function with a DataFrame (gives the number of rows)\nlength_of_dataframe = len(my_dataframe)\nprint(f&quot;\\nUsing the len() function with a DataFrame: {length_of_dataframe}&quot;)\n\n# Using the &#39;.head()&#39; method (specific to DataFrames) to see the first few rows\nfirst_two_rows = my_dataframe.head(2)\nprint(f&quot;Using the .head() method:\\n{first_two_rows}&quot;)\n</code></pre>\n<p><strong>Key takeaways:</strong></p><ul>\n<li><strong>Calling syntax:</strong> Functions are called by their name (e.g., <code>len(object)</code>), while methods are called on an object using dot notation (e.g., <code>object.method()</code>).</li>\n<li><strong>Association:</strong> Functions are generally independent, whereas methods are bound to specific objects.</li>\n<li><strong>Purpose:</strong> Methods are designed to operate on the data and structure of the object they belong to. Functions can perform more general tasks.</li>\n</ul>\n<p>In the Pandas library, you’ll encounter both functions (like <code>pd.read_csv()</code>, <code>pd.concat()</code>) and a vast array of powerful methods associated with Series and DataFrame objects (like <code>.describe()</code>, <code>.groupby()</code>, <code>.fillna()</code>, <code>.apply()</code>). Understanding this distinction will make navigating and utilizing the Pandas library much smoother!</p>",
+            "author": {
+                "name": "Aakash Khandelwal"
+            },
+            "tags": [
+                   "python",
+                   "pandas",
+                   "basics"
+            ],
+            "date_published": "2025-05-19T16:31:23+05:30",
+            "date_modified": "2025-05-19T16:33:16+05:30"
+        },
+        {
             "id": "https://aakashkh.github.io/python_data/format-strings-python-pandas.html",
             "url": "https://aakashkh.github.io/python_data/format-strings-python-pandas.html",
             "title": "Mastering Python&#x27;s Format Strings (with Pandas Examples)",
@@ -56,7 +73,7 @@
                    "basics"
             ],
             "date_published": "2025-05-16T13:18:13+05:30",
-            "date_modified": "2025-05-19T16:24:27+05:30"
+            "date_modified": "2025-05-19T16:33:10+05:30"
         }
     ]
 }

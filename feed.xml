@@ -3,12 +3,78 @@
     <title>Python Data</title>
     <link href="https://aakashkh.github.io/python_data/feed.xml" rel="self" />
     <link href="https://aakashkh.github.io/python_data" />
-    <updated>2025-05-19T16:24:27+05:30</updated>
+    <updated>2025-05-19T16:33:16+05:30</updated>
     <author>
         <name>Aakash Khandelwal</name>
     </author>
     <id>https://aakashkh.github.io/python_data</id>
 
+    <entry>
+        <title>Demystifying Functions and Methods in Python (with Pandas Context)</title>
+        <author>
+            <name>Aakash Khandelwal</name>
+        </author>
+        <link href="https://aakashkh.github.io/python_data/python-methods-functions-difference.html"/>
+        <id>https://aakashkh.github.io/python_data/python-methods-functions-difference.html</id>
+            <category term="python"/>
+            <category term="pandas"/>
+            <category term="basics"/>
+
+        <updated>2025-05-19T16:31:23+05:30</updated>
+            <summary>
+                <![CDATA[
+                    Let’s clear up the difference between methods and functions, especially as they&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <p> Let’s clear up the difference between methods and functions, especially as they relate to the wonderful world of Pandas.</p><p>Think of it this way:</p><ul>
+<li><strong>Functions</strong> are like standalone tools in your workshop. You can pick them up and use them on various things. They exist independently.</li>
+<li><strong>Methods</strong> are tools that are specifically attached to an object. You need to have the object in hand to use its methods. They operate <em>on</em> that specific object.</li>
+</ul>
+<p>In Python, and consequently in Pandas:</p><ul>
+<li>A <strong>function</strong> is a block of organized, reusable code that performs a specific task. You call a function by its name, and you might pass arguments (data) to it.</li>
+<li>A <strong>method</strong> is a function that is associated with an object (like a Pandas DataFrame or Series). You call a method on an object using dot notation (<code>object.method()</code>). The object itself is often implicitly passed as the first argument to the method.</li>
+</ul>
+<p>Let’s illustrate this with Pandas examples:</p><pre><code class="language-python">import pandas as pd
+
+# Creating a sample Pandas Series
+data = [10, 20, 30, 40, 50]
+my_series = pd.Series(data)
+
+# --- Example of a FUNCTION ---
+# The &#39;len()&#39; function is a built-in Python function.
+# It&#39;s not specific to Pandas, but we can use it with a Pandas Series.
+length_of_series = len(my_series)
+print(f&quot;Using the len() function: {length_of_series}&quot;)
+
+# --- Example of a METHOD ---
+# The &#39;.mean()&#39; method is specific to Pandas Series objects.
+# We call it *on* the &#39;my_series&#39; object.
+mean_value = my_series.mean()
+print(f&quot;Using the .mean() method: {mean_value}&quot;)
+
+# Another example with a DataFrame
+data = {&#39;col1&#39;: [1, 2, 3], &#39;col2&#39;: [4, 5, 6]}
+my_dataframe = pd.DataFrame(data)
+
+# Using the &#39;len()&#39; function with a DataFrame (gives the number of rows)
+length_of_dataframe = len(my_dataframe)
+print(f&quot;\nUsing the len() function with a DataFrame: {length_of_dataframe}&quot;)
+
+# Using the &#39;.head()&#39; method (specific to DataFrames) to see the first few rows
+first_two_rows = my_dataframe.head(2)
+print(f&quot;Using the .head() method:\n{first_two_rows}&quot;)
+</code></pre>
+<p><strong>Key takeaways:</strong></p><ul>
+<li><strong>Calling syntax:</strong> Functions are called by their name (e.g., <code>len(object)</code>), while methods are called on an object using dot notation (e.g., <code>object.method()</code>).</li>
+<li><strong>Association:</strong> Functions are generally independent, whereas methods are bound to specific objects.</li>
+<li><strong>Purpose:</strong> Methods are designed to operate on the data and structure of the object they belong to. Functions can perform more general tasks.</li>
+</ul>
+<p>In the Pandas library, you’ll encounter both functions (like <code>pd.read_csv()</code>, <code>pd.concat()</code>) and a vast array of powerful methods associated with Series and DataFrame objects (like <code>.describe()</code>, <code>.groupby()</code>, <code>.fillna()</code>, <code>.apply()</code>). Understanding this distinction will make navigating and utilizing the Pandas library much smoother!</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Mastering Python&#x27;s Format Strings (with Pandas Examples)</title>
         <author>
