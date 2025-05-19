@@ -3,7 +3,7 @@
     <title>Python Data</title>
     <link href="https://aakashkh.github.io/python_data/feed.xml" rel="self" />
     <link href="https://aakashkh.github.io/python_data" />
-    <updated>2025-05-19T15:52:28+05:30</updated>
+    <updated>2025-05-19T16:24:27+05:30</updated>
     <author>
         <name>Aakash Khandelwal</name>
     </author>
@@ -16,11 +16,13 @@
         </author>
         <link href="https://aakashkh.github.io/python_data/format-strings-python-pandas.html"/>
         <id>https://aakashkh.github.io/python_data/format-strings-python-pandas.html</id>
+            <category term="python"/>
+            <category term="basics"/>
 
         <updated>2025-05-19T15:22:42+05:30</updated>
             <summary>
                 <![CDATA[
-                    Let’s break down the d type code and explore some other useful format specifiers within format strings. In the format string &#39;{0}_m{1:02d}_d{2:02d}&#39;.format(2025, 1, 5), the&hellip;
+                    Let’s break down the d type code and explore some other useful&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -120,11 +122,13 @@
         </author>
         <link href="https://aakashkh.github.io/python_data/accessing-non-continous-indices-in-list.html"/>
         <id>https://aakashkh.github.io/python_data/accessing-non-continous-indices-in-list.html</id>
+            <category term="python"/>
+            <category term="basics"/>
 
         <updated>2025-05-16T15:06:24+05:30</updated>
             <summary>
                 <![CDATA[
-                    Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python: my_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;,&hellip;
+                    Here are a few ways to select non-continuous list indices (e.g., indices&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -176,11 +180,14 @@ print(selected_items)  # Output: [&#39;b&#39;, &#39;e&#39;, &#39;h&#39;]
         </author>
         <link href="https://aakashkh.github.io/python_data/series-vs-dataframe-in-pandas.html"/>
         <id>https://aakashkh.github.io/python_data/series-vs-dataframe-in-pandas.html</id>
+            <category term="python"/>
+            <category term="pandas"/>
+            <category term="basics"/>
 
         <updated>2025-05-16T13:18:13+05:30</updated>
             <summary>
                 <![CDATA[
-                    In Python’s Pandas library, both a Series and a DataFrame with one column can store similar data, but they have distinct characteristics. A Series is&hellip;
+                    In Python’s Pandas library, both a Series and a DataFrame with one&hellip;
                 ]]>
             </summary>
         <content type="html">
