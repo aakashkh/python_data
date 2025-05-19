@@ -3,7 +3,7 @@
     <title>Python Data</title>
     <link href="https://aakashkh.github.io/python_data/feed.xml" rel="self" />
     <link href="https://aakashkh.github.io/python_data" />
-    <updated>2025-05-19T15:31:54+05:30</updated>
+    <updated>2025-05-19T15:52:28+05:30</updated>
     <author>
         <name>Aakash Khandelwal</name>
     </author>
@@ -109,7 +109,7 @@
 <li><strong>Converting Pandas Series or DataFrame columns to strings with specific formats.</strong> For example, when creating reports or exporting data.</li>
 <li><strong>Formatting date and time information.</strong> Pandas uses its own sophisticated date and time handling, but when you need to represent dates as strings, format strings are essential. You’ll often see format codes like <code>%Y</code> (year with century), <code>%m</code> (month as a zero-padded decimal number), <code>%d</code> (day of the month as a zero-padded decimal number), <code>%H</code> (hour (24-hour clock)), <code>%M</code> (minute), <code>%S</code> (second), etc. These are used with methods like <code>.strftime()</code> on datetime objects within Pandas.</li>
 </ul>
-<p>Understanding these format specifiers gives you a lot of control over how your data is presented as strings, making your output cleaner and more readable, especially when working with structured data in Pandas.</p><p>Do you have any specific formatting tasks in mind with Pandas that you’d like to explore? I can provide more targeted examples!</p>
+
             ]]>
         </content>
     </entry>
