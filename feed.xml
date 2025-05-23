@@ -3,12 +3,175 @@
     <title>Python Data</title>
     <link href="https://aakashkh.github.io/python_data/feed.xml" rel="self" />
     <link href="https://aakashkh.github.io/python_data" />
-    <updated>2025-05-19T16:42:07+05:30</updated>
+    <updated>2025-05-23T17:45:06+05:30</updated>
     <author>
         <name>Aakash Khandelwal</name>
     </author>
     <id>https://aakashkh.github.io/python_data</id>
 
+    <entry>
+        <title>Understanding iloc vs loc in Pandas: A Beginner&#x27;s Guide</title>
+        <author>
+            <name>Aakash Khandelwal</name>
+        </author>
+        <link href="https://aakashkh.github.io/python_data/understanding-iloc-vs-loc-in-pandas-a-beginners-guide.html"/>
+        <id>https://aakashkh.github.io/python_data/understanding-iloc-vs-loc-in-pandas-a-beginners-guide.html</id>
+            <category term="python"/>
+            <category term="pandas"/>
+            <category term="basics"/>
+
+        <updated>2025-05-23T17:44:29+05:30</updated>
+            <summary>
+                <![CDATA[
+                    Introduction Pandas is a powerhouse for data manipulation in Python, and two of its most commonly used methods for selecting data from a DataFrame are loc and iloc. If you’re new to Pandas or transitioning from beginner to intermediate, understanding the difference between these two&hellip;
+                ]]>
+            </summary>
+        <content type="html">
+            <![CDATA[
+                <h2 id="introduction">Introduction</h2>
+<p>Pandas is a powerhouse for data manipulation in Python, and two of its most commonly used methods for selecting data from a DataFrame are <code>loc</code> and <code>iloc</code>. If you’re new to Pandas or transitioning from beginner to intermediate, understanding the difference between these two methods is essential for efficient data handling. In this post, we’ll break down <code>loc</code> and <code>iloc</code>, explore their differences, and provide practical examples to help you master data selection in Pandas.</p><h2 id="what-are-loc-and-iloc">What Are <code>loc</code> and <code>iloc</code>?</h2>
+<p>Both <code>loc</code> and <code>iloc</code> are used to select rows and columns from a Pandas DataFrame, but they differ in how they reference data:</p><ul>
+<li><code>loc</code>: A <em>label-based</em> indexing method. It uses row and column labels (e.g., column names or index names) to select data.</li>
+<li><code>iloc</code>: An <em>integer-based</em> indexing method. It uses integer positions (0-based indices) to select data, regardless of the labels.</li>
+</ul>
+<p>Think of <code>loc</code> as working with the “names” of rows and columns, while <code>iloc</code> works with their “positions.”</p><h2 id="key-differences">Key Differences</h2>
+<p>Here’s a quick comparison to set the stage:</p><table>
+<thead>
+<tr>
+<th><strong>Feature</strong></th>
+<th><code>loc</code></th>
+<th><code>iloc</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Indexing Type</strong></td>
+<td>Label-based</td>
+<td>Integer-based</td>
+</tr>
+<tr>
+<td><strong>Selection Method</strong></td>
+<td>Uses row/column labels</td>
+<td>Uses integer positions (0-based)</td>
+</tr>
+<tr>
+<td><strong>Inclusive/Exclusive</strong></td>
+<td>Inclusive of end label</td>
+<td>Exclusive of end index</td>
+</tr>
+<tr>
+<td><strong>Use Case</strong></td>
+<td>When working with meaningful labels</td>
+<td>When order/position matters</td>
+</tr>
+</tbody></table>
+<p>Let’s dive into examples to see these methods in action.</p><h2 id="setting-up-a-sample-dataframe">Setting Up a Sample DataFrame</h2>
+<p>To illustrate <code>loc</code> and <code>iloc</code>, let’s create a simple DataFrame:</p><pre><code class="language-python">import pandas as pd
+
+data = {
+    &#39;Name&#39;: [&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;, &#39;David&#39;],
+    &#39;Age&#39;: [25, 30, 35, 40],
+    &#39;City&#39;: [&#39;New York&#39;, &#39;London&#39;, &#39;Paris&#39;, &#39;Tokyo&#39;]
+}
+df = pd.DataFrame(data, index=[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;])
+print(df)
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>       Name  Age     City
+a    Alice   25  New York
+b      Bob   30   London
+c  Charlie   35    Paris
+d    David   40    Tokyo
+</code></pre>
+<p>This DataFrame has labeled rows (<code>a</code>, <code>b</code>, <code>c</code>, <code>d</code>) and columns (<code>Name</code>, <code>Age</code>, <code>City</code>). Let’s use <code>loc</code> and <code>iloc</code> to select data.</p><h2 id="loc-label-based-indexing"><code>loc</code>: Label-Based Indexing</h2>
+<p>The <code>loc</code> method allows you to select rows and columns by their labels. You can use it to select:</p><ul>
+<li>A single row or column.</li>
+<li>Multiple rows or columns.</li>
+<li>A range of rows or columns.</li>
+<li>Specific rows and columns together.</li>
+</ul>
+<h3 id="example-1-selecting-a-single-row">Example 1: Selecting a Single Row</h3>
+<p>To select the row with index <code>b</code>:</p><pre><code class="language-python">print(df.loc[&#39;b&#39;])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>Name       Bob
+Age         30
+City    London
+Name: b, dtype: object
+</code></pre>
+<p>Here, <code>loc[&#39;b&#39;]</code> returns the row labeled <code>b</code> as a Series.</p><h3 id="example-2-selecting-a-specific-cell">Example 2: Selecting a Specific Cell</h3>
+<p>To get Charlie’s age (row <code>c</code>, column <code>Age</code>):</p><pre><code class="language-python">print(df.loc[&#39;c&#39;, &#39;Age&#39;])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>35
+</code></pre>
+<h3 id="example-3-selecting-a-range-of-rows">Example 3: Selecting a Range of Rows</h3>
+<p>You can select a range of rows using a slice. Note that <code>loc</code> is <em>inclusive</em> of the end label:</p><pre><code class="language-python">print(df.loc[&#39;a&#39;:&#39;c&#39;])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>       Name  Age     City
+a    Alice   25  New York
+b      Bob   30   London
+c  Charlie   35    Paris
+</code></pre>
+<h3 id="example-4-selecting-specific-columns">Example 4: Selecting Specific Columns</h3>
+<p>To select the <code>Name</code> and <code>City</code> columns for rows <code>b</code> and <code>d</code>:</p><pre><code class="language-python">print(df.loc[[&#39;b&#39;, &#39;d&#39;], [&#39;Name&#39;, &#39;City&#39;]])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>    Name     City
+b    Bob   London
+d  David    Tokyo
+</code></pre>
+<h2 id="iloc-integer-based-indexing"><code>iloc</code>: Integer-Based Indexing</h2>
+<p>The <code>iloc</code> method uses integer positions to select data, similar to how you’d index a Python list. It’s useful when you don’t care about labels or when the DataFrame has numeric indices.</p><h3 id="example-1-selecting-a-single-row-1">Example 1: Selecting a Single Row</h3>
+<p>To select the second row (index position 1):</p><pre><code class="language-python">print(df.iloc[1])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>Name       Bob
+Age         30
+City    London
+Name: b, dtype: object
+</code></pre>
+<h3 id="example-2-selecting-a-specific-cell-1">Example 2: Selecting a Specific Cell</h3>
+<p>To get the value in the third row, second column (Charlie’s age):</p><pre><code class="language-python">print(df.iloc[2, 1])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>35
+</code></pre>
+<h3 id="example-3-selecting-a-range-of-rows-1">Example 3: Selecting a Range of Rows</h3>
+<p>Unlike <code>loc</code>, <code>iloc</code> is <em>exclusive</em> of the end index:</p><pre><code class="language-python">print(df.iloc[0:3])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>       Name  Age     City
+a    Alice   25  New York
+b      Bob   30   London
+c  Charlie   35    Paris
+</code></pre>
+<p>Notice that <code>0:3</code> selects rows 0, 1, and 2, but not 3.</p><h3 id="example-4-selecting-specific-columns-1">Example 4: Selecting Specific Columns</h3>
+<p>To select the first and third columns for the first two rows:</p><pre><code class="language-python">print(df.iloc[0:2, [0, 2]])
+</code></pre>
+<p><strong>Output</strong>:</p><pre><code>    Name     City
+a  Alice  New York
+b    Bob   London
+</code></pre>
+<h2 id="when-to-use-loc-vs-iloc">When to Use <code>loc</code> vs. <code>iloc</code></h2>
+<ul>
+<li><p><strong>Use</strong> <code>loc</code> <strong>when</strong>:</p><ul>
+<li>Your DataFrame has meaningful labels (e.g., dates, categories).</li>
+<li>You want to select data by name, like a dictionary.</li>
+<li>You need inclusive range slicing.</li>
+</ul>
+</li>
+<li><p><strong>Use</strong> <code>iloc</code> <strong>when</strong>:</p><ul>
+<li>You’re working with numeric positions (e.g., first 10 rows).</li>
+<li>Labels are irrelevant or unavailable.</li>
+<li>You’re iterating programmatically over a DataFrame.</li>
+</ul>
+</li>
+</ul>
+<h2 id="common-pitfalls">Common Pitfalls</h2>
+<ul>
+<li><strong>Using</strong> <code>loc</code> <strong>with non-existent labels</strong>: If you try <code>df.loc[&#39;z&#39;]</code>, you’ll get a <code>KeyError</code> unless <code>z</code> exists in the index.</li>
+<li><strong>Using</strong> <code>iloc</code> <strong>with out-of-bounds indices</strong>: <code>df.iloc[10]</code> will raise an <code>IndexError</code> if the DataFrame has fewer than 11 rows.</li>
+<li><strong>Confusing inclusive/exclusive slicing</strong>: Remember that <code>loc</code> includes the end label, while <code>iloc</code> excludes the end index.</li>
+</ul>
+<h2 id="performance-considerations">Performance Considerations</h2>
+<p>For small DataFrames, the performance difference between <code>loc</code> and <code>iloc</code> is negligible. However, <code>iloc</code> can be slightly faster for large datasets because integer-based indexing avoids label lookups. Always test with your specific data to confirm.</p><h2 id="conclusion">Conclusion</h2>
+<p>Mastering <code>loc</code> and <code>iloc</code> is a key step in becoming proficient with Pandas. Use <code>loc</code> for label-based selection when your data has meaningful row or column names, and <code>iloc</code> for position-based selection when you’re working with indices. By understanding their differences and practicing with examples, you’ll be able to navigate DataFrames with confidence.</p><p>For more Pandas tips, check out the official Pandas documentation or explore RealPython’s Pandas tutorials for deeper dives into data analysis.</p>
+            ]]>
+        </content>
+    </entry>
     <entry>
         <title>Demystifying Functions and Methods in Python (with Pandas Context)</title>
         <author>
@@ -23,7 +186,7 @@
         <updated>2025-05-19T16:31:23+05:30</updated>
             <summary>
                 <![CDATA[
-                    Let’s clear up the difference between methods and functions, especially as they&hellip;
+                    Let’s clear up the difference between methods and functions, especially as they relate to the wonderful world of Pandas. Think of it this way: In Python, and consequently in Pandas: Let’s illustrate this with Pandas examples: import pandas as pd # Creating a sample Pandas&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -88,7 +251,7 @@ print(f&quot;Using the .head() method:\n{first_two_rows}&quot;)
         <updated>2025-05-19T15:22:42+05:30</updated>
             <summary>
                 <![CDATA[
-                    Let’s break down the d type code and explore some other useful&hellip;
+                    Let’s break down the d type code and explore some other useful format specifiers within format strings. In the format string &#39;{0}_m{1:02d}_d{2:02d}&#39;.format(2025, 1, 5), the parts within the curly braces {} are replacement fields. Let’s focus on {1:02d} and {2:02d}: {1} and {2}: These refer&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -194,7 +357,7 @@ print(f&quot;Using the .head() method:\n{first_two_rows}&quot;)
         <updated>2025-05-16T15:06:24+05:30</updated>
             <summary>
                 <![CDATA[
-                    Here are a few ways to select non-continuous list indices (e.g., indices&hellip;
+                    Here are a few ways to select non-continuous list indices (e.g., indices 1, 4, and 7) in Python: my_list = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;, &#39;e&#39;, &#39;f&#39;, &#39;g&#39;, &#39;h&#39;] indices = [1, 4, 7] selected_items = [my_list[i] for i in indices] print(selected_items) # Output: [&#39;b&#39;, &#39;e&#39;,&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -253,7 +416,7 @@ print(selected_items)  # Output: [&#39;b&#39;, &#39;e&#39;, &#39;h&#39;]
         <updated>2025-05-16T13:18:13+05:30</updated>
             <summary>
                 <![CDATA[
-                    In Python’s Pandas library, both a Series and a DataFrame with one&hellip;
+                    In Python’s Pandas library, both a Series and a DataFrame with one column can store similar data, but they have distinct characteristics. A Series is a one-dimensional array-like object, while a DataFrame is a two-dimensional tabular structure, even if it has only one column. Below,&hellip;
                 ]]>
             </summary>
         <content type="html">
